@@ -28,8 +28,8 @@ jobs:
 
       - name: Commit snapshots
         run: |
-          git config user.name "anti-gafamo bot"
-          git config user.email "bot@anti-gafamo"
+          git config user.name "palimpsest bot"
+          git config user.email "bot@palimpsest"
           git add snapshots/
           git diff --staged --quiet || git commit -m "snapshot: $(date -u +%Y-%m-%d)"
           git push
