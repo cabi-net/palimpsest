@@ -7,40 +7,74 @@ from bs4 import BeautifulSoup
 
 DATE = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-TARGETS = {
-    "google": {
-        "url": "https://support.google.com/assistant/answer/11091015?hl=en",
-        "selectors": [
-            "h2", "h3", "p", "li"
-        ]
-    },
-    "meta": {
-        "url": "https://privacycenter.instagram.com/privacy/genai/",
-        "selectors": [
-            "h1", "h2", "h3", "p", "li"
-        ]
-    }
-}
-
-async def scrape_with_playwright(name, config):
+async def scrape_google():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         )
-        await page.goto(config["url"], wait_until="networkidle", timeout=30000)
+        await page.goto(
+            "https://support.google.com/assistant/answer/11091015?hl=en",
+            wait_until="networkidle",
+            timeout=30000
+        )
         await page.wait_for_timeout(3000)
         html = await page.content()
         await browser.close()
 
     soup = BeautifulSoup(html, "html.parser")
     chunks = []
-    for tag in soup.find_all(config["selectors"]):
+    for tag in soup.find_all(["h2", "h3", "p", "li"]):
         text = tag.get_text(separator=" ", strip=True)
         if len(text) > 40:
             chunks.append(text)
-
     return "\n\n".join(chunks)
+
+
+async def scrape_meta():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        await page.goto(
+            "https://privacycenter.instagram.com/privacy/genai/",
+            wait_until="networkidle",
+            timeout=30000
+        )
+        await page.wait_for_timeout(4000)
+
+        # click all accordion buttons to expand hidden content
+        buttons = await page.query_selector_all('[role="button"]')
+        for button in buttons:
+            try:
+                expanded = await button.get_attribute("aria-expanded")
+                if expanded == "false":
+                    await button.click()
+                    await page.wait_for_timeout(500)
+            except:
+                pass
+
+        await page.wait_for_timeout(2000)
+        html = await page.content()
+        await browser.close()
+
+    soup = BeautifulSoup(html, "html.parser")
+    chunks = []
+    for tag in soup.find_all(["h1", "h2", "h3", "p", "li", "span"]):
+        text = tag.get_text(separator=" ", strip=True)
+        if len(text) > 60:
+            chunks.append(text)
+
+    # deduplicate while preserving order
+    seen = set()
+    unique = []
+    for chunk in chunks:
+        if chunk not in seen:
+            seen.add(chunk)
+            unique.append(chunk)
+
+    return "\n\n".join(unique)
 
 
 def scrape_openai_wayback():
@@ -86,13 +120,13 @@ def save_snapshot(name, content):
 
 
 async def main():
-    for name, config in TARGETS.items():
-        print(f"Scraping {name}...")
-        content = await scrape_with_playwright(name, config)
-        save_snapshot(name, content)
+    print("Scraping Google...")
+    save_snapshot("google", await scrape_google())
+
+    print("Scraping Meta...")
+    save_snapshot("meta", await scrape_meta())
 
     print("Scraping OpenAI via Wayback Machine...")
-    content = scrape_openai_wayback()
-    save_snapshot("openai", content)
+    save_snapshot("openai", scrape_openai_wayback())
 
 asyncio.run(main())
