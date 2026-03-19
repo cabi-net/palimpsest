@@ -1,5 +1,3 @@
 How Meta uses information for generative AI models and features
 
 Where does Meta get training information?
-
-Our legal bases for processing information
