@@ -1,6 +1,6 @@
 # palimpsest
  
-> writing material (such as a parchment or tablet) used one or more times after earlier writing has been erased[^1]
+> writing material (such as a parchment or tablet) used one or more times after earlier writing has been erased [^1]
 
  
 An automated archive that watches the language of institutional AI and data privacy disclosures over time, and makes their changes visible (diff viewer to be implemented).
