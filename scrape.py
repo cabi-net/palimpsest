@@ -76,6 +76,40 @@ async def scrape_meta():
 
     return "\n\n".join(unique)
 
+async def scrape_microsoft():
+    async with async_playwright() as p:
+        browser = await p.chromium.launch(headless=True)
+        page = await browser.new_page(
+            user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        )
+        await page.goto(
+            "https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy",
+            wait_until="networkidle",
+            timeout=30000
+        )
+        await page.wait_for_timeout(4000)
+        html = await page.content()
+        await browser.close()
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    # target the main article content, ignore nav/sidebar
+    article = soup.find("main") or soup
+    chunks = []
+    for tag in article.find_all(["h1", "h2", "h3", "p", "li"]):
+        text = tag.get_text(separator=" ", strip=True)
+        if len(text) > 40:
+            chunks.append(text)
+
+    seen = set()
+    unique = []
+    for chunk in chunks:
+        if chunk not in seen:
+            seen.add(chunk)
+            unique.append(chunk)
+
+    return "\n\n".join(unique)
+
 
 def scrape_openai_wayback():
     url = "http://archive.org/wayback/available?url=openai.com/policies/data-processing-addendum/"
@@ -114,6 +148,17 @@ def save_snapshot(name, content):
     folder = f"snapshots/{name}"
     os.makedirs(folder, exist_ok=True)
     filepath = f"{folder}/{DATE}.txt"
+
+    if os.path.exists(filepath):
+        time_str = datetime.now(timezone.utc).strftime("%H%M")
+        catch_folder = f"snapshots/catches/{name}"
+        os.makedirs(catch_folder, exist_ok=True)
+        catch_path = f"{catch_folder}/{DATE}-{time_str}.txt"
+        with open(catch_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        print(f"Already scraped today — saved as catch: {catch_path}")
+        return
+
     with open(filepath, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"Saved: {filepath}")
@@ -125,6 +170,9 @@ async def main():
 
     print("Scraping Meta...")
     save_snapshot("meta", await scrape_meta())
+
+    print("Scraping Microsoft...")
+    save_snapshot("microsoft", await scrape_microsoft())
 
     print("Scraping OpenAI via Wayback Machine...")
     openai_content = scrape_openai_wayback()

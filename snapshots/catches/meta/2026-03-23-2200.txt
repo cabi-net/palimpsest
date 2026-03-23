@@ -1,0 +1,75 @@
+Privacy Policy What is the Privacy Policy and what does it cover? What information do we collect? How do we use your information? How is your information shared on Meta Products or with integrated partners? How do we share information with third parties? How do the Meta Companies work together? What is our legal basis for processing your information, and what are your rights? How long do we keep your information? How do we transfer information? How do we respond to legal requests, comply with applicable law and prevent harm? How will you know the Policy has changed? How to contact Meta with questions Legal basis information
+
+How is your information shared on Meta Products or with integrated partners?
+
+What is our legal basis for processing your information, and what are your rights?
+
+How do we respond to legal requests, comply with applicable law and prevent harm?
+
+How Meta uses information for generative AI models and features
+
+We're always improving AI at Meta. To do this, we want you to know that we'll use public information such as public posts and comments from accounts of people aged 18 years or older and your interactions with AI at Meta features. We'll use this information on the basis of legitimate interests to develop and improve generative AI models for AI at Meta. You have the right to object to the use of your information for these purposes. If you submit an objection, we'll send an email confirming that we won't use your interactions with AI at Meta features or your public information from Meta Products for future development and improvement of generative AI models for AI at Meta. Learn about how models are trained . If you've already objected, you don't need to submit another request. These changes go into effect on May 27, 2025. View the Privacy  Policy .
+
+We're developing generative AI experiences and are excited to bring them to more people and businesses across Meta Products worldwide. That's why we're developing AI at Meta, our collection of generative AI features and experiences, like Meta AI and AI Creative Tools, along with the models that power them. This also includes making models available through an open platform to support researchers, developers and others in the AI community.
+
+AI at Meta helps people solve complex problems, be more imaginative, and create something never seen before. From bringing real-time answers to chat, to helping people organize and plan for their next vacation, to giving them more ways to express themselves, AI at Meta helps people enhance their everyday activities, experiences and moments.
+
+We are committed to building responsibly. We want you to know how generative AI works, and how we use your information to make this advancement possible.
+
+Generative artificial intelligence (generative AI) enables people to quickly create content in new and exciting ways. For example, with generative AI people can easily create new content like images to share with friends, and businesses can create text responses for questions from their customers.
+
+Generative AI is not a database or static collection of information but computer models. These models are a form of artificial intelligence that are trained on billions of pieces of information from different types of data like text, images and audio. By studying this information, it can learn things like the relationship and associations between different types of content. That way the models are able to create new content when a person gives it instructions or a question. Generative AI can be used to create a variety of content like text, images and audio.
+
+• Models that generate text: Large language models (also called LLMs) are models trained on massive amounts of text to help them predict typical sequences, like those found in our everyday language. LLMs learn from the data using a combination of machine learning and guidance given by people who help train the models. They can be trained to do different language-based tasks, like completing a sentence, translating text into a different language, or responding to questions in a conversational way. • Models that generate images: These models are trained by looking at billions of images and their text captions, which are the descriptive text associated with the images. The model learns the association between these text descriptions and the images. Once it's learned the association, it can create new images, like when a person enters a text description of the image they want generated.
+
+• Models that generate text: Large language models (also called LLMs) are models trained on massive amounts of text to help them predict typical sequences, like those found in our everyday language. LLMs learn from the data using a combination of machine learning and guidance given by people who help train the models. They can be trained to do different language-based tasks, like completing a sentence, translating text into a different language, or responding to questions in a conversational way.
+
+Models that generate text: Large language models (also called LLMs) are models trained on massive amounts of text to help them predict typical sequences, like those found in our everyday language. LLMs learn from the data using a combination of machine learning and guidance given by people who help train the models. They can be trained to do different language-based tasks, like completing a sentence, translating text into a different language, or responding to questions in a conversational way.
+
+• Models that generate images: These models are trained by looking at billions of images and their text captions, which are the descriptive text associated with the images. The model learns the association between these text descriptions and the images. Once it's learned the association, it can create new images, like when a person enters a text description of the image they want generated.
+
+Models that generate images: These models are trained by looking at billions of images and their text captions, which are the descriptive text associated with the images. The model learns the association between these text descriptions and the images. Once it's learned the association, it can create new images, like when a person enters a text description of the image they want generated.
+
+Generative AI models help machines better understand the world and let people translate that understanding into creative expression.
+
+Since it takes such a large amount of data to teach effective models, a combination of sources are used for training. We use information that is publicly available online and licensed information. We also use your interactions with AI at Meta features and public information like public posts and comments shared on Meta Products. Depending on the content, this could include information that addresses sensitive topics about others or yourself (for example, if you make a public post about something that's sensitive to you, like your contact information). We use this content to develop and improve AI at Meta, so our models can do things like learn about sensitive topics without censorship or discrimination.
+
+We're not using people's private messages with friends and family to train our AIs unless you or someone in the chat chooses to share those messages with our AIs. For AI features that use Private Processing technology , Meta cannot read or access the private messages you have shared. We're also not using public information from accounts of users in the UK or EU under the age of 18, unless it was shared as part of interactions with AI at Meta. There are more details on how we use information from Meta Products in our Privacy Policy .
+
+When we collect public information from the internet or license data from other providers to train our models, it may include personal information. For example, if we collect a public blog post it may include the author's name and contact information. When we do get personal information as part of this public and licensed data that we use to train our models, we don't specifically link this data to any Meta account.
+
+Even if you don't use our Products or have an account, we may still process information about you to develop and improve AI at Meta. For example, this could happen if you appear anywhere in an image shared on our Products by someone who does use them or if someone mentions information about you in posts or captions that they share on our Products. This could include information about people who are under 18 years old.
+
+At Meta, we have a responsibility to protect people's privacy and have teams dedicated to this work for everything we build.
+
+We have a robust internal Privacy Review process that helps ensure we are using data at Meta responsibly for our products, including generative AI. We work to identify potential privacy risks that involve the collection, use or sharing of personal information and develop ways to reduce those risks to people's privacy. Read more about our privacy programs and learn about our teams of experts.
+
+To do this work ethically and responsibly, we have 5 foundational values at the core of how we think about AI. Learn more about our 5 pillars.
+
+• Privacy and security • Fairness and inclusion • Robustness and safety • Transparency and control • Governance and accountability
+
+Our AI responsibility efforts are propelled by a cross-disciplinary team whose mission is to help ensure that AI at Meta benefits people and society. Our work on responsible AI is driven by our belief that everyone should have equitable access to information, services, and opportunities. Learn about our recent progress.
+
+We're investing so much in this space because we believe it provides benefits for people, creators and businesses around the world. That's why we're building AI at Meta and making models available through an open platform. To train effective models to unlock these advancements, a significant amount of information is needed. This is why we draw from publicly available and licensed sources, as well as public information people have shared on Meta Products and interactions with AI at Meta features. We keep training data for as long as we need it on a case-by-case basis to ensure an AI model is operating appropriately, safely and efficiently. We also may keep it to protect our or others' interests, or comply with legal obligations.
+
+We are committed to being transparent about the legal bases that we use for processing information. We believe use of this information is in the legitimate interests of Meta, our users, and other people. In the European Region and the United Kingdom, we rely on the basis of legitimate interests to collect and process any personal information included in the publicly available and licensed sources, as well as public information people have shared on Meta Products and interactions with AI at Meta features, to develop and improve AI at Meta. For other jurisdictions where applicable, we rely on an adequate legal basis to collect and process this data.
+
+You have rights related to how your information is used for AI at Meta.
+
+• This includes the right to object to your interactions with AI at Meta features and the public information you've shared on Meta Products being used to develop and improve AI at Meta. You can submit an objection request through your Facebook , Instagram , or Meta account. Your objection will be applied to the account you're logged into and any accounts that you've added to the same Accounts Center. You can also submit an objection request through your WhatsApp account about your messages with AIs on WhatsApp being used to develop and improve AI at Meta. • Whether you use Meta Products or not, anyone can submit requests related to their personal information from third parties being used to develop and improve AI at Meta. Learn more and submit requests here.
+
+• This includes the right to object to your interactions with AI at Meta features and the public information you've shared on Meta Products being used to develop and improve AI at Meta. You can submit an objection request through your Facebook , Instagram , or Meta account. Your objection will be applied to the account you're logged into and any accounts that you've added to the same Accounts Center. You can also submit an objection request through your WhatsApp account about your messages with AIs on WhatsApp being used to develop and improve AI at Meta.
+
+This includes the right to object to your interactions with AI at Meta features and the public information you've shared on Meta Products being used to develop and improve AI at Meta. You can submit an objection request through your Facebook , Instagram , or Meta account. Your objection will be applied to the account you're logged into and any accounts that you've added to the same Accounts Center. You can also submit an objection request through your WhatsApp account about your messages with AIs on WhatsApp being used to develop and improve AI at Meta.
+
+• Whether you use Meta Products or not, anyone can submit requests related to their personal information from third parties being used to develop and improve AI at Meta. Learn more and submit requests here.
+
+Whether you use Meta Products or not, anyone can submit requests related to their personal information from third parties being used to develop and improve AI at Meta. Learn more and submit requests here.
+
+You may need to be logged into your account to see the appropriate forms for your region. You can learn about your other rights for information you've shared on Meta Products in our Privacy Policy .
+
+We see many possibilities ahead for people, creators and businesses to use generative AI. We're excited to see this technology come this far but know that there's more to do in the future. Generative AI is a fast-moving space and we are committed to staying transparent as this technology evolves.
+
+We use cookies and similar technologies to provide and improve content on Facebook Products, provide a safer experience by using information we receive from cookies on and off Instagram, and provide and improve Facebook Products for people who have an account. Learn more about essential and optional cookies .
+
+You can learn more about cookies and how we use them, and review or change your choice at any time in our Cookie Policy .
