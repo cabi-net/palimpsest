@@ -127,6 +127,10 @@ async def main():
     save_snapshot("meta", await scrape_meta())
 
     print("Scraping OpenAI via Wayback Machine...")
-    save_snapshot("openai", scrape_openai_wayback())
+    openai_content = scrape_openai_wayback()
+    if openai_content.startswith("Wayback") or openai_content.startswith("No snapshot") or openai_content.startswith("Failed"):
+        print(f"Skipping save: {openai_content}")
+    else:
+        save_snapshot("openai", openai_content)
 
 asyncio.run(main())
