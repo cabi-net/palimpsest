@@ -26,10 +26,15 @@ jobs:
       - name: Run scraper
         run: python scrape.py
 
+      - name: Generate diff viewer
+        run: python diff.py
+        continue-on-error: true
+
       - name: Commit snapshots
         run: |
           git config user.name "palimpsest bot"
           git config user.email "bot@palimpsest"
           git add snapshots/
+          git add index.html
           git diff --staged --quiet || git commit -m "snapshot: $(date -u +%Y-%m-%d)"
           git push
