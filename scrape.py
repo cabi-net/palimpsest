@@ -112,23 +112,33 @@ async def scrape_microsoft():
 
 
 def scrape_openai_wayback():
-    url = "http://archive.org/wayback/available?url=openai.com/policies/data-processing-addendum/"
+    # CDX queries the raw capture index, unlike the `available` endpoint which
+    # returns empty when the live site's robots.txt blocks the path.
     try:
-        response = requests.get(url, timeout=15)
-        if not response.text.strip():
-            return "Wayback API returned empty response — try again later"
-        data = response.json()
+        cdx = requests.get(
+            "https://web.archive.org/cdx/search/cdx",
+            params={
+                "url": "openai.com/policies/data-processing-addendum/",
+                "limit": "-1",
+                "output": "json",
+                "filter": "statuscode:200",
+            },
+            timeout=30,
+        )
+        if not cdx.text.strip():
+            return "Wayback CDX returned empty response — try again later"
+        rows = cdx.json()
     except Exception as e:
-        return f"Wayback API error: {str(e)}"
+        return f"Wayback CDX error: {str(e)}"
 
-    snapshot = data.get("archived_snapshots", {}).get("closest", {})
-
-    if not snapshot or not snapshot.get("available"):
+    if len(rows) < 2:
         return "No snapshot available"
 
-    snapshot_url = snapshot["url"]
+    timestamp, original = rows[1][1], rows[1][2]
+    snapshot_url = f"https://web.archive.org/web/{timestamp}/{original}"
+
     try:
-        page = requests.get(snapshot_url, timeout=15)
+        page = requests.get(snapshot_url, timeout=30)
         soup = BeautifulSoup(page.content, "html.parser")
     except Exception as e:
         return f"Failed to fetch snapshot: {str(e)}"
@@ -139,8 +149,7 @@ def scrape_openai_wayback():
         if len(text) > 40:
             chunks.append(text)
 
-    snapshot_date = snapshot.get("timestamp", "unknown")
-    header = f"[Wayback snapshot: {snapshot_date}]\n[URL: {snapshot_url}]\n\n"
+    header = f"[Wayback snapshot: {timestamp}]\n[URL: {snapshot_url}]\n\n"
     return header + "\n\n".join(chunks)
 
 
@@ -176,7 +185,7 @@ async def main():
 
     print("Scraping OpenAI via Wayback Machine...")
     openai_content = scrape_openai_wayback()
-    if openai_content.startswith("Wayback") or openai_content.startswith("No snapshot") or openai_content.startswith("Failed"):
+    if openai_content.startswith(("Wayback", "No snapshot", "Failed")):
         print(f"Skipping save: {openai_content}")
     else:
         save_snapshot("openai", openai_content)

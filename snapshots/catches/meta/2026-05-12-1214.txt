@@ -1,0 +1,18 @@
+How Meta uses information for generative AI models and features
+
+We’re always improving AI at Meta. To do this, we want you to know that we’ll use public information such as public posts and comments from accounts of people aged 18 years or older and your interactions with AI at Meta features. We'll use this information on the basis of legitimate interests to develop and improve generative AI models for AI at Meta.
+  
+  You have the right to object to the use of your information for these purposes. If you submit an objection, we’ll send an email confirming that we won’t use your interactions with AI at Meta features or your public information from Meta Products for future development and improvement of generative AI models for AI at Meta. Learn about how models are trained . If you’ve already objected, you don’t need to submit another request.
+
+    
+These changes go into effect on May 27, 2025. View the Privacy  Policy .
+
+We’re developing generative AI experiences and are excited to bring them to more people and businesses across Meta Products worldwide. That’s why we’re developing AI at Meta, our collection of generative AI features and experiences, like Meta AI and AI Creative Tools, along with the models that power them. This also includes making models available through an open platform to support researchers, developers and others in the AI community.
+
+AI at Meta helps people solve complex problems, be more imaginative, and create something never seen before. From bringing real-time answers to chat, to helping people organize and plan for their next vacation, to giving them more ways to express themselves, AI at Meta helps people enhance their everyday activities, experiences and moments.
+
+We are committed to building responsibly. We want you to know how generative AI works, and how we use your information to make this advancement possible.
+
+We see many possibilities ahead for people, creators and businesses to use generative AI. We’re excited to see this technology come this far but know that there’s more to do in the future. Generative AI is a fast-moving space and we are committed to staying transparent as this technology evolves.
+
+We use cookies to help personalize and improve content and services, serve relevant ads and provide a safer experience. You can review your cookie controls at any time. Learn more about cookie uses and controls in our Cookie Policy .
